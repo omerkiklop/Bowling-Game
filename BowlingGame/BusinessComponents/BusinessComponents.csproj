@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{727AA922-B108-4E1B-BAFD-3C4A2D268225}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessComponents</RootNamespace>
+    <AssemblyName>BusinessComponents</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessComponents\BowlingGame.cs" />
+    <Compile Include="BusinessComponents\BowlingGameRules.cs" />
+    <Compile Include="BusinessComponents\BowlingPlayer.cs" />
+    <Compile Include="BusinessComponents\Frame.cs" />
+    <Compile Include="Factory\MessageFactory.cs" />
+    <Compile Include="Interfaces\IBowlingGame.cs" />
+    <Compile Include="Interfaces\IMessageFactory.cs" />
+    <Compile Include="Mappers\FrameMapper.cs" />
+    <Compile Include="Abstracts\Game.cs" />
+    <Compile Include="BusinessComponents\BowlingGameCalculator.cs" />
+    <Compile Include="Abstracts\GameRules.cs" />
+    <Compile Include="Interfaces\IBowlingGameRules.cs" />
+    <Compile Include="Interfaces\IBowlingPlayer.cs" />
+    <Compile Include="Interfaces\IFrame.cs" />
+    <Compile Include="Interfaces\IFrameMapper.cs" />
+    <Compile Include="Interfaces\IGame.cs" />
+    <Compile Include="Interfaces\IGameCalculator.cs" />
+    <Compile Include="Interfaces\IGameRules.cs" />
+    <Compile Include="Interfaces\IPlayer.cs" />
+    <Compile Include="Interfaces\IPlayerFactory.cs" />
+    <Compile Include="Interfaces\IPlayers.cs" />
+    <Compile Include="Interfaces\IRollScore.cs" />
+    <Compile Include="Abstracts\Player.cs" />
+    <Compile Include="Factory\PlayerFactory.cs" />
+    <Compile Include="BusinessComponents\Players.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BusinessComponents\RollScore.cs" />
+    <Compile Include="ScoreTypes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessEntityServices\BusinessEntityServices.csproj">
+      <Project>{ED3DE16A-F26D-4804-BDE7-624BB6691F14}</Project>
+      <Name>BusinessEntityServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Log\Log.csproj">
+      <Project>{883D8FAB-4944-411C-9410-869B4D46E986}</Project>
+      <Name>Log</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
